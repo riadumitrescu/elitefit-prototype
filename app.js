@@ -6,7 +6,7 @@ const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 // [name, story line]; the flashback and the what if sit inside chapters 2 and 4
 const chapters = [
   ['Setting up', 'Chapter 1 · Sun 11 Oct, evening'],
-  ['A flashback', 'Chapter 2 · Mon 12 Oct, her first morning'],
+  ['A flashback', 'Chapter 2 · Mon 17 Aug, her first morning'],
   ['A short night', 'Chapter 2 · Wed 21 Oct, 06:40'],
   ['Her call', 'Chapter 3 · Wed 21 Oct'],
   ['The next morning', 'Chapter 4 · Thu 22 Oct, 06:50'],
