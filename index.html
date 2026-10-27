@@ -65,31 +65,36 @@
       </div>
       <svg class="devices-art" viewBox="0 0 340 280" role="img" aria-label="A smart ring next to a watch showing readiness 46, Low">
         <defs>
-          <linearGradient id="strap" x1="0" y1="0" x2="1" y2="0">
-            <stop offset="0" stop-color="#1E1825"/><stop offset=".3" stop-color="#3A3044"/><stop offset=".45" stop-color="#5A3D4E"/><stop offset=".6" stop-color="#2A2232"/><stop offset="1" stop-color="#17121D"/>
-          </linearGradient>
-          <linearGradient id="fadeTop" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#fff"/></linearGradient>
-          <linearGradient id="fadeBot" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
-          <mask id="mTop"><rect x="0" y="0" width="340" height="80" fill="url(#fadeTop)"/></mask>
-          <mask id="mBot"><rect x="0" y="200" width="340" height="80" fill="url(#fadeBot)"/></mask>
-          <linearGradient id="case" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6C6178"/><stop offset=".35" stop-color="#2E2738"/><stop offset="1" stop-color="#1A1520"/></linearGradient>
+          <linearGradient id="strapTop" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2A2232" stop-opacity="0"/><stop offset=".55" stop-color="#2A2232" stop-opacity=".9"/><stop offset="1" stop-color="#231C2B"/></linearGradient>
+          <linearGradient id="strapBot" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#231C2B"/><stop offset=".45" stop-color="#2A2232" stop-opacity=".9"/><stop offset="1" stop-color="#2A2232" stop-opacity="0"/></linearGradient>
+          <linearGradient id="stripeTop" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6E5262" stop-opacity="0"/><stop offset="1" stop-color="#6E5262" stop-opacity=".8"/></linearGradient>
+          <linearGradient id="stripeBot" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6E5262" stop-opacity=".8"/><stop offset="1" stop-color="#6E5262" stop-opacity="0"/></linearGradient>
+          <linearGradient id="case" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7A6E86"/><stop offset=".35" stop-color="#2E2738"/><stop offset="1" stop-color="#1A1520"/></linearGradient>
           <linearGradient id="wring" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFB59A"/><stop offset="1" stop-color="#C9B8FF"/></linearGradient>
           <linearGradient id="metal" x1="0" y1="0" x2="1" y2="0">
-            <stop offset="0" stop-color="#2E2C35"/><stop offset=".18" stop-color="#8E8C99"/><stop offset=".32" stop-color="#3A3842"/><stop offset=".55" stop-color="#C8A79F"/><stop offset=".72" stop-color="#EDE3E3"/><stop offset=".86" stop-color="#55525D"/><stop offset="1" stop-color="#2A2830"/>
+            <stop offset="0" stop-color="#3A3440"/><stop offset=".2" stop-color="#9A94A3"/><stop offset=".38" stop-color="#4A4450"/><stop offset=".6" stop-color="#E2C7BC"/><stop offset=".75" stop-color="#F6EEEC"/><stop offset=".9" stop-color="#6A6470"/><stop offset="1" stop-color="#34303A"/>
           </linearGradient>
-          <linearGradient id="inner" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0E0B12"/><stop offset=".6" stop-color="#3B3040"/><stop offset="1" stop-color="#B9A1B8"/></linearGradient>
+          <linearGradient id="rim" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F3E6E2"/><stop offset=".5" stop-color="#B9ADB8"/><stop offset="1" stop-color="#FFF6F2"/></linearGradient>
+          <linearGradient id="innerWall" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2A2430"/><stop offset=".55" stop-color="#7C6E80"/><stop offset="1" stop-color="#2A2430"/></linearGradient>
+          <mask id="hole"><rect x="0" y="0" width="340" height="280" fill="#fff"/><ellipse cx="96" cy="158" rx="61" ry="23" fill="#000"/></mask>
+          <mask id="wall"><ellipse cx="96" cy="158" rx="61" ry="23" fill="#fff"/><ellipse cx="96" cy="171" rx="61" ry="23" fill="#000"/></mask>
           <filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="9"/></filter>
         </defs>
         <circle cx="70" cy="80" r="2.2" fill="#fff" opacity=".9"/><circle cx="56" cy="88" r="1.8" fill="#fff" opacity=".6"/><circle cx="44" cy="96" r="1.4" fill="#fff" opacity=".4"/>
-        <rect x="186" y="0" width="104" height="90" fill="url(#strap)" mask="url(#mTop)"/>
-        <rect x="186" y="190" width="104" height="90" fill="url(#strap)" mask="url(#mBot)"/>
-        <ellipse cx="96" cy="216" rx="78" ry="16" fill="#5A3B3A" opacity=".35" filter="url(#soft)"/>
+        <!-- watch straps: tapered, fading out, tucked under the case -->
+        <path d="M196 92 L200 10 Q201 2 209 2 L253 2 Q261 2 262 10 L266 92 Z" fill="url(#strapTop)"/>
+        <path d="M224 92 L226 6 L236 6 L238 92 Z" fill="url(#stripeTop)"/>
+        <path d="M196 188 L266 188 L262 270 Q261 278 253 278 L209 278 Q201 278 200 270 Z" fill="url(#strapBot)"/>
+        <path d="M224 188 L238 188 L236 274 L226 274 Z" fill="url(#stripeBot)"/>
+        <!-- ring: a thin band with a real hole -->
+        <ellipse cx="96" cy="214" rx="74" ry="14" fill="#5A3B3A" opacity=".3" filter="url(#soft)"/>
         <g transform="rotate(-14 96 170)">
-          <path d="M22 160 v30 a74 34 0 0 0 148 0 v-30 z" fill="url(#metal)"/>
-          <ellipse cx="96" cy="160" rx="74" ry="34" fill="url(#metal)"/>
-          <ellipse cx="96" cy="161" rx="64" ry="27" fill="url(#inner)"/>
-          <path d="M34 166 a62 25 0 0 0 124 0" fill="none" stroke="#C4B3C7" stroke-opacity=".5" stroke-width="2"/>
+          <path d="M26 158 v13 a70 27 0 0 0 140 0 v-13 a70 27 0 0 1 -140 0 z" fill="url(#metal)"/>
+          <ellipse cx="96" cy="158" rx="61" ry="23" fill="url(#innerWall)" mask="url(#wall)"/>
+          <ellipse cx="96" cy="158" rx="70" ry="27" fill="url(#rim)" mask="url(#hole)"/>
+          <ellipse cx="96" cy="158" rx="61" ry="23" fill="none" stroke="#fff" stroke-opacity=".35" stroke-width="1"/>
         </g>
+        <!-- watch case -->
         <rect x="294" y="96" width="9" height="28" rx="4" fill="#3A3245"/>
         <rect x="295" y="134" width="7" height="22" rx="3" fill="#2A2332"/>
         <rect x="164" y="74" width="134" height="132" rx="40" fill="url(#case)"/>
