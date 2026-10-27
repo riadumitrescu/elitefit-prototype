@@ -1,0 +1,510 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>EliteFit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="stage" id="stage">
+<div class="device" id="device">
+
+  <div class="status" id="status" aria-hidden="true">
+    <span id="clock">9:41</span>
+    <span class="icons">
+      <svg width="18" height="12" viewBox="0 0 18 12" fill="currentColor"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg>
+      <svg width="16" height="12" viewBox="0 0 16 12" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><path d="M1.5 4.2a9.4 9.4 0 0 1 13 0"/><path d="M4 7a5.6 5.6 0 0 1 8 0"/><circle cx="8" cy="10" r="1.1" fill="currentColor" stroke="none"/></svg>
+      <svg width="26" height="12" viewBox="0 0 26 12" fill="none"><rect x=".7" y=".7" width="22" height="10.6" rx="3.3" stroke="currentColor" stroke-opacity=".45" stroke-width="1.2"/><rect x="2.4" y="2.4" width="17" height="7.2" rx="2" fill="currentColor"/><rect x="24" y="4" width="1.6" height="4" rx=".8" fill="currentColor" fill-opacity=".45"/></svg>
+    </span>
+  </div>
+
+  <!-- 1 WELCOME -->
+  <section class="screen bg-dawn" data-view="welcome" aria-label="Welcome">
+    <div class="scroll notabs">
+      <div class="hello c">
+        <span class="wordmark">elitefit<i></i></span>
+        <h1 class="serif h1">A tracker that asks you first.</h1>
+        <p class="sub">Say how you feel, then see your score.</p>
+      </div>
+      <div class="foot"><button class="btn-primary" data-go="goal">Get started</button></div>
+    </div>
+  </section>
+
+  <!-- 2 GOAL -->
+  <section class="screen bg-dawn" data-view="goal" aria-label="Your goal">
+    <div class="scroll notabs">
+      <div class="c" style="padding-top:8px"><span class="wordmark">elitefit<i></i></span>
+        <div class="dots" aria-hidden="true"><span class="on"></span><span></span><span></span></div>
+      </div>
+      <h1 class="serif h1 c" style="margin-top:32px">What are you training for?</h1>
+      <div class="choices" role="group" aria-label="Your goal">
+        <button class="glass choice" aria-pressed="true">Half marathon</button>
+        <button class="glass choice" aria-pressed="false">Marathon</button>
+        <button class="glass choice" aria-pressed="false">A shorter race</button>
+        <button class="glass choice" aria-pressed="false">Just getting fitter</button>
+      </div>
+      <p class="sect">Your race</p>
+      <div class="glass list">
+        <div class="li"><span class="t">Race day</span><em>Sun 6 Dec</em></div>
+        <div class="li"><span class="t">Target time</span><em>1:55:00</em></div>
+      </div>
+      <div class="foot"><button class="btn-primary" data-go="connect">Continue</button></div>
+    </div>
+  </section>
+
+  <!-- 3 CONNECT -->
+  <section class="screen bg-dawn" data-view="connect" aria-label="Connect your devices">
+    <div class="scroll notabs">
+      <div class="c" style="padding-top:8px"><span class="wordmark">elitefit<i></i></span>
+        <div class="dots" aria-hidden="true"><span></span><span class="on"></span><span></span></div>
+      </div>
+      <svg class="devices-art" viewBox="0 0 340 280" role="img" aria-label="A smart ring next to a watch showing readiness 46, Low">
+        <defs>
+          <linearGradient id="strap" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#1E1825"/><stop offset=".3" stop-color="#3A3044"/><stop offset=".45" stop-color="#5A3D4E"/><stop offset=".6" stop-color="#2A2232"/><stop offset="1" stop-color="#17121D"/>
+          </linearGradient>
+          <linearGradient id="fadeTop" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#fff"/></linearGradient>
+          <linearGradient id="fadeBot" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+          <mask id="mTop"><rect x="0" y="0" width="340" height="80" fill="url(#fadeTop)"/></mask>
+          <mask id="mBot"><rect x="0" y="200" width="340" height="80" fill="url(#fadeBot)"/></mask>
+          <linearGradient id="case" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6C6178"/><stop offset=".35" stop-color="#2E2738"/><stop offset="1" stop-color="#1A1520"/></linearGradient>
+          <linearGradient id="wring" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFB59A"/><stop offset="1" stop-color="#C9B8FF"/></linearGradient>
+          <linearGradient id="metal" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#2E2C35"/><stop offset=".18" stop-color="#8E8C99"/><stop offset=".32" stop-color="#3A3842"/><stop offset=".55" stop-color="#C8A79F"/><stop offset=".72" stop-color="#EDE3E3"/><stop offset=".86" stop-color="#55525D"/><stop offset="1" stop-color="#2A2830"/>
+          </linearGradient>
+          <linearGradient id="inner" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0E0B12"/><stop offset=".6" stop-color="#3B3040"/><stop offset="1" stop-color="#B9A1B8"/></linearGradient>
+          <filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="9"/></filter>
+        </defs>
+        <circle cx="70" cy="80" r="2.2" fill="#fff" opacity=".9"/><circle cx="56" cy="88" r="1.8" fill="#fff" opacity=".6"/><circle cx="44" cy="96" r="1.4" fill="#fff" opacity=".4"/>
+        <rect x="186" y="0" width="104" height="90" fill="url(#strap)" mask="url(#mTop)"/>
+        <rect x="186" y="190" width="104" height="90" fill="url(#strap)" mask="url(#mBot)"/>
+        <ellipse cx="96" cy="216" rx="78" ry="16" fill="#5A3B3A" opacity=".35" filter="url(#soft)"/>
+        <g transform="rotate(-14 96 170)">
+          <path d="M22 160 v30 a74 34 0 0 0 148 0 v-30 z" fill="url(#metal)"/>
+          <ellipse cx="96" cy="160" rx="74" ry="34" fill="url(#metal)"/>
+          <ellipse cx="96" cy="161" rx="64" ry="27" fill="url(#inner)"/>
+          <path d="M34 166 a62 25 0 0 0 124 0" fill="none" stroke="#C4B3C7" stroke-opacity=".5" stroke-width="2"/>
+        </g>
+        <rect x="294" y="96" width="9" height="28" rx="4" fill="#3A3245"/>
+        <rect x="295" y="134" width="7" height="22" rx="3" fill="#2A2332"/>
+        <rect x="164" y="74" width="134" height="132" rx="40" fill="url(#case)"/>
+        <rect x="172" y="82" width="118" height="116" rx="33" fill="#0A080D"/>
+        <path d="M172 116 C190 90 250 86 290 82 L290 82 L172 82 Z" fill="#fff" opacity=".06"/>
+        <text x="231" y="108" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="11" font-weight="500" fill="#B8B1C0">9:41</text>
+        <circle cx="231" cy="142" r="23" fill="none" stroke="#2C2533" stroke-width="6"/>
+        <circle cx="231" cy="142" r="23" fill="none" stroke="url(#wring)" stroke-width="6" stroke-linecap="round" stroke-dasharray="144.5" stroke-dashoffset="78" transform="rotate(-90 231 142)"/>
+        <text x="231" y="149" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="19" font-weight="600" fill="#fff" letter-spacing="-.5">46</text>
+        <text x="231" y="184" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="10" font-weight="600" fill="#F2A93B">Low</text>
+      </svg>
+      <h1 class="serif h1 c" style="font-size:38px">Bring your ring and watch</h1>
+      <div class="rows">
+        <div class="glass row"><span class="ic" style="background:rgba(107,79,216,.14);color:#6B4FD8"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><ellipse cx="12" cy="9" rx="8" ry="3.5"/><path d="M4 9v5c0 2 3.6 3.5 8 3.5s8-1.5 8-3.5V9"/></svg></span><span class="row-t">Oura Ring</span><button class="pillbtn" data-dev="Oura Ring">Connect</button></div>
+        <div class="glass row"><span class="ic" style="background:rgba(242,84,45,.12);color:#EE7440"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="5.5"/><path d="M12 9.5V12l1.5 1.2M9.5 6.5 10 3h4l.5 3.5M9.5 17.5 10 21h4l.5-3.5"/></svg></span><span class="row-t">Garmin</span><button class="pillbtn" data-dev="Garmin">Connect</button></div>
+        <div class="glass row"><span class="ic" style="background:rgba(31,169,113,.14);color:#1FA971"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="6.5" y="6.5" width="11" height="11" rx="3.2"/><path d="M9 6.5 9.5 3h5l.5 3.5M9 17.5l.5 3.5h5l.5-3.5"/></svg></span><span class="row-t">Apple Watch</span><button class="pillbtn done" data-dev="Apple Watch" aria-pressed="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Connected</button></div>
+      </div>
+      <div class="foot">
+        <button class="btn-primary" data-go="permissions">Continue</button>
+        <button class="link" data-go="permissions">Set up later</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 PERMISSIONS -->
+  <section class="screen bg-dawn" data-view="permissions" aria-label="What we read">
+    <div class="scroll notabs">
+      <div class="c" style="padding-top:8px"><span class="wordmark">elitefit<i></i></span>
+        <div class="dots" aria-hidden="true"><span></span><span></span><span class="on"></span></div>
+      </div>
+      <h1 class="serif h1 c" style="margin-top:24px">What we read, and what we never read.</h1>
+      <p class="sect">What we read</p>
+      <div class="glass list tight">
+        <div class="li"><svg viewBox="0 0 24 24" fill="none" stroke="#1FA971" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span class="t">Sleep</span></div>
+        <div class="li"><svg viewBox="0 0 24 24" fill="none" stroke="#1FA971" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span class="t">Heart rate</span></div>
+        <div class="li"><svg viewBox="0 0 24 24" fill="none" stroke="#1FA971" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span class="t">HRV</span></div>
+        <div class="li"><svg viewBox="0 0 24 24" fill="none" stroke="#1FA971" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span class="t">Workouts</span></div>
+      </div>
+      <p class="sect">What we never do</p>
+      <div class="glass list tight">
+        <div class="li"><svg viewBox="0 0 24 24" fill="none" stroke="#74657F" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M7 7l10 10M17 7 7 17"/></svg><span class="t">Read your messages</span></div>
+        <div class="li"><svg viewBox="0 0 24 24" fill="none" stroke="#74657F" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M7 7l10 10M17 7 7 17"/></svg><span class="t">Read your contacts</span></div>
+        <div class="li"><svg viewBox="0 0 24 24" fill="none" stroke="#74657F" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M7 7l10 10M17 7 7 17"/></svg><span class="t">Read your location history</span></div>
+        <div class="li"><svg viewBox="0 0 24 24" fill="none" stroke="#74657F" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M7 7l10 10M17 7 7 17"/></svg><span class="t">Sell your data</span></div>
+      </div>
+      <div class="foot"><button class="btn-primary" data-go="how">Allow</button></div>
+    </div>
+  </section>
+
+  <!-- 5 HOW IT WORKS -->
+  <section class="screen bg-dawn" data-view="how" aria-label="How it works">
+    <div class="scroll notabs">
+      <div class="c" style="padding-top:8px"><span class="wordmark">elitefit<i></i></span></div>
+      <h1 class="serif h1 c" style="margin-top:40px">How your mornings work.</h1>
+      <div class="steps">
+        <p class="glass step"><b>1</b>We ask how you feel.</p>
+        <p class="glass step"><b>2</b>Then we show your score.</p>
+        <p class="glass step"><b>3</b>If they disagree, you decide.</p>
+      </div>
+      <div class="foot"><button class="btn-primary" data-go="membership">Continue</button></div>
+    </div>
+  </section>
+
+  <!-- 6 MEMBERSHIP -->
+  <section class="screen bg-dawn" data-view="membership" aria-label="Membership">
+    <div class="scroll notabs">
+      <div class="c" style="padding-top:8px"><span class="wordmark">elitefit<i></i></span></div>
+      <h1 class="serif h1 c" style="margin-top:40px">[price] a month<br>after a 14-day trial.</h1>
+      <p class="sub c">Pause any time.</p>
+      <div class="aub perks">
+        <p class="kicker">With membership</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Your score, after you say how you feel</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>A race plan that changes with your mornings</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Insights from your own nights</li>
+        </ul>
+      </div>
+      <div class="foot">
+        <button class="btn-start" style="width:100%;height:56px;font-size:17px" data-go="checkin">Start trial</button>
+        <button class="link" data-go="checkin">Maybe later</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7 CHECK-IN -->
+  <section class="screen bg-dawn" data-view="checkin" aria-label="Morning check-in">
+    <div class="scroll">
+      <header class="top">
+        <div><span class="wordmark">elitefit<i></i></span><p class="date">Wednesday, 21 October</p></div>
+        <div class="acts"><button class="circ" aria-label="Notifications"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15z"/><path d="M10 20.5a2.2 2.2 0 0 0 4 0"/></svg></button><button class="circ" data-go="you" aria-label="Your profile">MS</button></div>
+      </header>
+      <h1 class="serif h1 c" style="margin-top:46px;font-size:42px">Before the numbers,<br>how do you feel?</h1>
+      <div class="orbs" id="orbs" role="group" aria-label="How do you feel?">
+        <button class="orb" data-feel="1" style="--c1:#F59088;--c2:#E2463E"><span class="ball"></span>Awful</button>
+        <button class="orb" data-feel="2" style="--c1:#F9B08A;--c2:#EE7440"><span class="ball"></span>Tired</button>
+        <button class="orb" data-feel="3" style="--c1:#FCD77A;--c2:#F0A631"><span class="ball"></span>Okay</button>
+        <button class="orb" data-feel="4" style="--c1:#BCE297;--c2:#78BD55"><span class="ball"></span>Good</button>
+        <button class="orb" data-feel="5" style="--c1:#6CDDB0;--c2:#1FA971"><span class="ball"></span>Great</button>
+      </div>
+      <div class="lock" id="lock" aria-live="polite">
+        <svg viewBox="0 0 240 240" aria-hidden="true">
+          <circle cx="120" cy="120" r="102" fill="none" stroke="rgba(255,255,255,.55)" stroke-width="16"/>
+          <circle class="prog" id="lockProg" cx="120" cy="120" r="102" fill="none" stroke="#fff" stroke-width="16" stroke-linecap="round" stroke-dasharray="640.9" stroke-dashoffset="640.9" transform="rotate(-90 120 120)"/>
+        </svg>
+        <div class="face"><svg viewBox="0 0 24 24" fill="none" stroke="#1E1530" stroke-width="1.8" stroke-linecap="round"><rect x="5" y="10.5" width="14" height="10" rx="2.5"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"/></svg>Readiness</div>
+        <div class="score"><b class="num" id="lockNum">0</b><span class="pill">Low</span></div>
+      </div>
+      <p class="hint c" id="hint">Your score shows after you answer.</p>
+    </div>
+  </section>
+
+  <!-- 8 TODAY -->
+  <section class="screen bg-dawn" data-view="today" aria-label="Today">
+    <div class="scroll">
+      <header class="top">
+        <div><span class="wordmark">elitefit<i></i></span><p class="date">Wednesday, 21 October</p></div>
+        <div class="acts"><button class="circ" aria-label="Notifications"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15z"/><path d="M10 20.5a2.2 2.2 0 0 0 4 0"/></svg></button><button class="circ" data-go="you" aria-label="Your profile">MS</button></div>
+      </header>
+      <button class="ringbtn" data-go="sleep" aria-label="Readiness 46, Low. See last night's sleep">
+        <svg viewBox="0 0 226 226" aria-hidden="true">
+          <defs><radialGradient id="disc" cx=".5" cy=".45" r=".55"><stop offset="0" stop-color="#FFD9A6"/><stop offset=".7" stop-color="#FFD2AA" stop-opacity=".75"/><stop offset="1" stop-color="#FFE3CF" stop-opacity=".3"/></radialGradient>
+          <filter id="rglow" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+          <circle cx="113" cy="113" r="88" fill="url(#disc)"/>
+          <circle cx="113" cy="113" r="102" fill="none" stroke="rgba(255,255,255,.45)" stroke-width="15"/>
+          <circle class="prog" cx="113" cy="113" r="102" fill="none" stroke="#fff" stroke-width="15" stroke-linecap="round" stroke-dasharray="640.9" stroke-dashoffset="346.1" transform="rotate(-90 113 113)" filter="url(#rglow)"/>
+        </svg>
+        <span class="in"><span class="lbl">Readiness</span><b class="num">46</b><span class="pill">Low</span></span>
+      </button>
+      <h1 class="serif h1 c" style="margin-top:34px">Go easy today.</h1>
+      <p class="sub c">A walk or mobility is enough.</p>
+      <div class="glass opin">
+        <div class="half"><span class="minorb" id="youOrb"></span><span><small>You</small><strong id="youFeel">Great</strong></span></div>
+        <div class="half"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="13" fill="none" stroke="rgba(30,21,48,.12)" stroke-width="4"/><circle cx="17" cy="17" r="13" fill="none" stroke="#F2A93B" stroke-width="4" stroke-linecap="round" stroke-dasharray="81.7" stroke-dashoffset="44.1" transform="rotate(-90 17 17)"/></svg><span><small>Your body</small><strong>46 Low</strong></span></div>
+        <button class="change" data-go="checkin">Change</button>
+      </div>
+      <div class="aub session">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#FFB59A" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="13.5" r="7"/><path d="M12 13.5V10M10 3h4M18 6.5l1.5-1.5"/></svg></span>
+        <span class="t"><strong id="sessTitle">Tempo run · 2 × 15 min</strong><span id="sessSub">You feel Great, so it stays on</span></span>
+        <button class="btn-start" data-go="session">Start</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9 SLEEP -->
+  <section class="screen bg-dusk" data-view="sleep" aria-label="Last night's sleep">
+    <div class="scroll">
+      <header class="navtop">
+        <button class="circ" data-go="today" aria-label="Back to Today"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m14.5 6-6 6 6 6"/></svg></button>
+        <h2>Last night</h2>
+        <button class="circ" aria-label="Pick a night"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="4" y="5.5" width="16" height="14" rx="3"/><path d="M4 10h16M8.5 3.5v3M15.5 3.5v3"/></svg></button>
+      </header>
+      <span class="moon" aria-hidden="true"></span>
+      <p class="num bignum c">5<small>h</small>40<small>m</small></p>
+      <h1 class="serif h1 c" style="margin-top:8px">Short night.</h1>
+      <p class="sub c" style="font-size:13px">1h 50m under your goal.</p>
+      <div class="aub" style="padding:18px 16px;margin-top:30px">
+        <p class="card-h">Sleep stages</p>
+        <svg class="hypno" id="hypno" viewBox="0 0 280 170" role="img" aria-label="Sleep stages from 00:10 to 06:25"></svg>
+        <div class="times"><span>00:10</span><span>06:25</span></div>
+        <div class="totals">
+          <div><small style="--d:#FFA36B">Awake</small><b>35m</b></div>
+          <div><small style="--d:#5EE0E6">REM</small><b>1h 10m</b></div>
+          <div><small style="--d:#C9B8FF">Light</small><b>3h 30m</b></div>
+          <div><small style="--d:#8A6CF5">Deep</small><b>1h 00m</b></div>
+        </div>
+      </div>
+      <button class="why" data-go="insight">Why does this matter?</button>
+    </div>
+  </section>
+
+  <!-- 10 INSIGHT -->
+  <section class="screen bg-dusk" data-view="insight" aria-label="EliteFit insight">
+    <div class="scroll">
+      <header class="navtop">
+        <button class="circ" data-go="sleep" aria-label="Back to last night"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m14.5 6-6 6 6 6"/></svg></button>
+        <button class="circ" aria-label="More"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><circle cx="5.5" cy="12" r="1.8"/><circle cx="12" cy="12" r="1.8"/><circle cx="18.5" cy="12" r="1.8"/></svg></button>
+      </header>
+      <div class="c" style="margin-top:6px"><span class="chip"><svg width="12" height="12" viewBox="0 0 24 24" fill="#1E1530"><path d="M12 2l2.2 7.8L22 12l-7.8 2.2L12 22l-2.2-7.8L2 12l7.8-2.2z"/></svg>EliteFit insight</span></div>
+      <h1 class="serif h1 c" style="margin-top:12px">Short nights hit<br>your HRV hardest.</h1>
+      <p class="sub c" style="font-size:13px">Under 6 hours of sleep, it drops by a third.</p>
+      <div class="aub" style="padding:18px 16px 16px;margin-top:28px">
+        <p class="card-h">Average HRV the morning after</p>
+        <div class="bars">
+          <div class="bar a" style="--h:100px"><span class="num v">36<small>ms</small></span><i></i></div>
+          <div class="bar b" style="--h:150px"><span class="num v">54<small>ms</small></span><i></i></div>
+        </div>
+        <div class="barlbl"><span>Under 6 hours</span><span>6 hours or more</span></div>
+      </div>
+      <p class="fine">Based on 10 nights. Medium confidence, can be wrong.</p>
+      <div class="fb" id="fb">
+        <button class="glass" data-fb="Thanks. We'll show you more like this."><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M7 10.5V20H4.5V10.5zM7 10.5l4-7c1.6 0 2.6 1.3 2.2 2.9L12.5 10H19a2 2 0 0 1 2 2.3l-1.2 6A2 2 0 0 1 17.8 20H7"/></svg>This helped</button>
+        <button class="glass" data-fb="Got it. We'll show you fewer like this."><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" transform="rotate(180)"><path d="M7 10.5V20H4.5V10.5zM7 10.5l4-7c1.6 0 2.6 1.3 2.2 2.9L12.5 10H19a2 2 0 0 1 2 2.3l-1.2 6A2 2 0 0 1 17.8 20H7"/></svg>Not for me</button>
+      </div>
+      <p class="glass thanks" id="thanks" hidden></p>
+    </div>
+  </section>
+
+  <!-- 11 PLAN -->
+  <section class="screen bg-day" data-view="plan" aria-label="Plan">
+    <div class="scroll">
+      <header class="top">
+        <div><span class="wordmark">elitefit<i></i></span><p class="date">Half marathon · Sun 6 Dec</p></div>
+        <div class="acts"><button class="circ" aria-label="More"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><circle cx="5.5" cy="12" r="1.8"/><circle cx="12" cy="12" r="1.8"/><circle cx="18.5" cy="12" r="1.8"/></svg></button><button class="circ" data-go="you" aria-label="Your profile">MS</button></div>
+      </header>
+      <div class="gauge">
+        <svg viewBox="0 0 260 200" aria-hidden="true" id="gauge"></svg>
+        <div class="in"><b class="num">46</b><span class="wkpill">Week 6 of 12 · Build</span></div>
+        <span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">46 days to race day</span>
+      </div>
+      <h1 class="serif h1 c" style="margin-top:8px">6 weeks to go.</h1>
+      <p class="sub c" style="margin-top:2px">Target 1:55:00</p>
+      <div class="glass week" id="week"></div>
+      <div class="aub plancard">
+        <p class="kicker">Today · Wed 21 Oct</p>
+        <h3 id="planTitle">Tempo run</h3>
+        <p id="planSub">2 × 15 min at 5:10/km</p>
+        <button class="btn-start" data-go="session">Start</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 12 SESSION -->
+  <section class="screen bg-day" data-view="session" aria-label="Tempo run in progress">
+    <div class="scroll notabs">
+      <p class="label c" style="padding-top:8px">Block 1 of 2</p>
+      <h1 class="serif h1 c" style="margin-top:4px">Tempo run</h1>
+      <p class="num timer c">12:40</p>
+      <p class="sub c">of 15 min</p>
+      <div class="glass stats">
+        <div><p class="label">Pace</p><b class="num">5:12<small>/km</small></b></div>
+        <div><p class="label">Target</p><b class="num">5:10<small>/km</small></b></div>
+      </div>
+      <div class="glass zone" role="img" aria-label="Heart rate in zone 4 of 5">
+        <p class="label">Heart rate zone</p>
+        <div class="zones" aria-hidden="true"><i style="--c:var(--green)"></i><i style="--c:var(--green)"></i><i style="--c:var(--amber)"></i><i class="on" style="--c:var(--coral)"></i><i style="--c:var(--red)"></i></div>
+        <div class="ends" aria-hidden="true"><span>Easy</span><span>Max</span></div>
+      </div>
+      <div class="foot">
+        <button class="btn-glass" data-toast="Okay. Run this block by feel.">Feels hard? Ease off.</button>
+        <div class="btnrow">
+          <button class="btn-glass" id="pause">Pause</button>
+          <button class="btn-primary" data-go="done">End</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 13 DONE -->
+  <section class="screen bg-day" data-view="done" aria-label="Run done">
+    <div class="scroll notabs">
+      <span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+      <h1 class="serif h1 c" style="margin-top:20px">Tempo done.</h1>
+      <div class="glass stats">
+        <div><p class="label">Distance</p><b class="num">9.6<small>km</small></b></div>
+        <div><p class="label">Total time</p><b class="num">50:30</b></div>
+      </div>
+      <div class="glass felt">
+        <p class="label c">How did it feel?</p>
+        <div class="orbs" role="group" aria-label="How did it feel?">
+          <button class="orb" aria-pressed="false" style="--c1:#F59088;--c2:#E2463E"><span class="ball"></span>Awful</button>
+          <button class="orb" aria-pressed="false" style="--c1:#F9B08A;--c2:#EE7440"><span class="ball"></span>Tired</button>
+          <button class="orb" aria-pressed="false" style="--c1:#FCD77A;--c2:#F0A631"><span class="ball"></span>Okay</button>
+          <button class="orb" aria-pressed="false" style="--c1:#BCE297;--c2:#78BD55"><span class="ball"></span>Good</button>
+          <button class="orb" aria-pressed="false" style="--c1:#6CDDB0;--c2:#1FA971"><span class="ball"></span>Great</button>
+        </div>
+      </div>
+      <div class="foot"><button class="btn-primary" data-go="today-next">Save</button></div>
+    </div>
+  </section>
+
+  <!-- 14 TODAY, NEXT MORNING -->
+  <section class="screen bg-dawn" data-view="today-next" aria-label="Today, Thursday">
+    <div class="scroll">
+      <header class="top">
+        <div><span class="wordmark">elitefit<i></i></span><p class="date">Thursday, 22 October</p></div>
+        <div class="acts"><button class="circ" aria-label="Notifications"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15z"/><path d="M10 20.5a2.2 2.2 0 0 0 4 0"/></svg></button><button class="circ" data-go="you" aria-label="Your profile">MS</button></div>
+      </header>
+      <div class="ringbtn" role="img" aria-label="Readiness 71, High">
+        <svg viewBox="0 0 226 226" aria-hidden="true">
+          <circle cx="113" cy="113" r="88" fill="url(#disc)"/>
+          <circle cx="113" cy="113" r="102" fill="none" stroke="rgba(255,255,255,.45)" stroke-width="15"/>
+          <circle cx="113" cy="113" r="102" fill="none" stroke="#fff" stroke-width="15" stroke-linecap="round" stroke-dasharray="640.9" stroke-dashoffset="185.9" transform="rotate(-90 113 113)" filter="url(#rglow)"/>
+        </svg>
+        <span class="in"><span class="lbl">Readiness</span><b class="num">71</b><span class="pill high">High</span></span>
+      </div>
+      <h1 class="serif h1 c" style="margin-top:34px">You called it.</h1>
+      <p class="sub c">You ran on a short night and bounced back to 71.</p>
+      <div class="glass opin">
+        <div class="half"><span class="minorb" style="background:linear-gradient(145deg,#BCE297,#78BD55)"></span><span><small>You</small><strong>Good</strong></span></div>
+        <div class="half"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="13" fill="none" stroke="rgba(30,21,48,.12)" stroke-width="4"/><circle cx="17" cy="17" r="13" fill="none" stroke="#1FA971" stroke-width="4" stroke-linecap="round" stroke-dasharray="81.7" stroke-dashoffset="23.7" transform="rotate(-90 17 17)"/></svg><span><small>Your body</small><strong>71 High</strong></span></div>
+      </div>
+      <div class="aub session">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#FFB59A" stroke-width="1.9" stroke-linecap="round"><path d="M3 12h18M6 8v8M18 8v8M3.5 10v4M20.5 10v4"/></svg></span>
+        <span class="t"><strong>Strength · lower body</strong><span>You feel Good, so it stays on</span></span>
+        <button class="btn-start" data-toast="Strength started">Start</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 15 SYNC FAILED -->
+  <section class="screen bg-dawn" data-view="sync-failed" aria-label="Ring didn't sync">
+    <div class="scroll">
+      <header class="top">
+        <div><span class="wordmark">elitefit<i></i></span><p class="date">Thursday, 22 October</p></div>
+        <div class="acts"><button class="circ" aria-label="Notifications"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15z"/><path d="M10 20.5a2.2 2.2 0 0 0 4 0"/></svg></button><button class="circ" data-go="you" aria-label="Your profile">MS</button></div>
+      </header>
+      <div class="glass nosync" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><ellipse cx="12" cy="9" rx="8" ry="3.5"/><path d="M4 9v5c0 2 3.6 3.5 8 3.5s8-1.5 8-3.5V9"/></svg></div>
+      <h1 class="serif h1 c" style="margin-top:34px">Your ring didn't sync.</h1>
+      <p class="sub c">Last synced 06:12.</p>
+      <div style="margin-top:32px">
+        <button class="btn-primary" data-toast="Trying again. This can take a minute.">Try again</button>
+        <button class="link" data-toast="Okay. Today follows how you feel.">Use how you feel today</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 16 TRENDS -->
+  <section class="screen bg-day" data-view="trends" aria-label="Trends">
+    <div class="scroll">
+      <header class="top">
+        <div><span class="wordmark">elitefit<i></i></span><p class="date">Trends · 12 to 25 October</p></div>
+        <div class="acts"><button class="circ" aria-label="Pick dates"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="4" y="5.5" width="16" height="14" rx="3"/><path d="M4 10h16M8.5 3.5v3M15.5 3.5v3"/></svg></button><button class="circ" data-go="you" aria-label="Your profile">MS</button></div>
+      </header>
+      <div class="seg" role="group" aria-label="Time range">
+        <button aria-pressed="false" data-range="HRV · last 7 days">Week</button>
+        <button aria-pressed="true" data-range="HRV · last 14 days">Month</button>
+        <button aria-pressed="false" data-range="HRV · last 6 months">6 months</button>
+      </div>
+      <h1 class="serif h1" style="margin-top:24px">Back above your usual.</h1>
+      <p class="sub" style="font-size:13px">62 ms on Sun 25 Oct. Your usual is 50 to 60.</p>
+      <div class="aub hrvcard">
+        <p class="card-h" id="rangeLbl">HRV · last 14 days</p>
+        <p class="num big">62<small>ms</small></p>
+        <svg class="chart" id="chart" viewBox="0 0 300 150" role="img" aria-label="HRV line chart, dipping to 38 on 21 Oct and rising to 62 on 25 Oct"></svg>
+        <div class="times"><span>12 Oct</span><span>25 Oct</span></div>
+      </div>
+      <div class="tiles">
+        <div class="glass tile"><small><span class="ic" style="background:rgba(107,79,216,.14);color:#6B4FD8"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M19 14.5A7.5 7.5 0 0 1 9.5 5a7.5 7.5 0 1 0 9.5 9.5z"/></svg></span>Sleep avg</small><b class="num">6h 58m</b>
+          <svg class="spark" viewBox="0 0 120 28" preserveAspectRatio="none" aria-hidden="true"><path d="M2 18 C14 10 22 22 34 16 S54 8 64 14 S84 24 94 14 S110 8 118 10" fill="none" stroke="#7E62F0" stroke-width="2" stroke-linecap="round"/><circle cx="118" cy="10" r="3" fill="#6B4FD8"/></svg></div>
+        <div class="glass tile"><small><span class="ic" style="background:rgba(232,89,79,.14);color:#E8594F"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 20s-7.5-4.4-7.5-10A4.3 4.3 0 0 1 12 7.3 4.3 4.3 0 0 1 19.5 10c0 5.6-7.5 10-7.5 10z"/></svg></span>Resting HR</small><b class="num">56 <small>bpm</small></b>
+          <svg class="spark" viewBox="0 0 120 28" preserveAspectRatio="none" aria-hidden="true"><path d="M2 12 C14 14 22 10 34 13 S54 20 64 16 S84 10 94 14 S110 18 118 16" fill="none" stroke="#E8594F" stroke-width="2" stroke-linecap="round"/><circle cx="118" cy="16" r="3" fill="#E8594F"/></svg></div>
+      </div>
+      <button class="glass linkrow" data-go="agree">
+        <span class="ic" style="background:rgba(242,84,45,.12);color:#F2542D"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="9" cy="12" r="5"/><circle cx="15" cy="12" r="5"/></svg></span>
+        <span class="t"><strong>You and your ring</strong><span>How your mornings lined up</span></span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1E1530" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </button>
+    </div>
+  </section>
+
+  <!-- 17 AGREE -->
+  <section class="screen bg-day" data-view="agree" aria-label="You and your ring">
+    <div class="scroll">
+      <header class="top">
+        <div><span class="wordmark">elitefit<i></i></span><p class="date">Trends · 12 to 23 October</p></div>
+        <div class="acts"><button class="circ" data-go="trends" aria-label="Back to Trends"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m14.5 6-6 6 6 6"/></svg></button><button class="circ" data-go="you" aria-label="Your profile">MS</button></div>
+      </header>
+      <h1 class="serif h1" style="margin-top:22px;font-size:42px">You and your ring agreed 11 of 12 mornings.</h1>
+      <div class="aub agcard">
+        <p class="card-h">Each morning · 12 to 23 Oct</p>
+        <p class="num big">11 of 12<small>agreed</small></p>
+        <div class="agrid" id="agrid" role="img" aria-label="Twelve mornings. You and your ring matched on all but 21 October."></div>
+      </div>
+      <div class="glass note">
+        <small>21 Oct</small>
+        <p>You said Great, your body said 46. You kept the tempo run and woke up at 71.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 18 YOU -->
+  <section class="screen bg-dawn" data-view="you" aria-label="You">
+    <div class="scroll">
+      <header class="top">
+        <div><span class="wordmark">elitefit<i></i></span><p class="date">Your profile</p></div>
+      </header>
+      <h1 class="serif h1" style="margin-top:18px">Hi, Marta.</h1>
+      <div class="glass prof">
+        <span class="avatar">MS</span>
+        <span><strong>Marta</strong><span>Half marathon · Sun 6 Dec</span></span>
+      </div>
+      <p class="sect">Your devices</p>
+      <div class="glass list" id="youDevs"></div>
+      <p class="sect">Membership</p>
+      <div class="glass list">
+        <div class="li"><span class="t">[price] a month · pause any time</span></div>
+      </div>
+      <button class="link" data-go="connect">Add a device</button>
+    </div>
+  </section>
+
+  <nav class="tabs" id="tabs" aria-label="Main">
+    <button class="tab" data-go="today" data-tab="today"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round"><circle cx="12" cy="12" r="8" stroke="#C9BFCC"/><path d="M12 4a8 8 0 0 1 6.2 13" stroke="#F2542D"/></svg>Today</button>
+    <button class="tab" data-go="plan" data-tab="plan"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><rect x="4" y="5.5" width="16" height="14.5" rx="3"/><path d="M4 10h16M8.5 3.5v3.5M15.5 3.5v3.5"/></svg>Plan</button>
+    <button class="tab" data-go="trends" data-tab="trends"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4v16h16"/><path d="m7.5 15 3.5-4.5 3 3L19 7"/></svg>Trends</button>
+    <button class="tab" data-go="you" data-tab="you"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="8.5" r="4"/><path d="M4.5 20.5a7.5 7.5 0 0 1 15 0"/></svg>You</button>
+  </nav>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <div class="homebar" id="homebar" aria-hidden="true"></div>
+</div>
+</div>
+
+<aside class="glass story" id="story" aria-label="Marta's story">
+  <div class="story-top"><p class="story-when" id="when"></p><p class="count" id="count"></p></div>
+  <div class="story-top"><h2 class="serif" id="chapter"></h2><button class="toggle" id="toggle" aria-expanded="true">Hide</button></div>
+  <p class="story-cap" id="cap" aria-live="polite"></p>
+  <div class="story-nav">
+    <button class="btn-glass" id="back">Back</button>
+    <button class="btn-primary" id="next">Next</button>
+  </div>
+  <div class="progress" aria-hidden="true"><i id="bar"></i></div>
+  <p class="story-foot">Marta and her numbers are made up.</p>
+</aside>
+
+<script src="app.js"></script>
+</body>
+</html>
