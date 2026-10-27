@@ -1,6 +1,6 @@
 # EliteFit story prototype
 
-A clickable prototype of EliteFit, a health tracker that asks how you feel before it shows your score. It follows Marta through two weeks of training for a half marathon, in 18 screens and 5 chapters. The panel beside the phone says what's happening and why each screen looks the way it does. Back and Next walk the story in order, and tapping inside the app works too.
+A clickable prototype of EliteFit, a health tracker that asks how you feel before it shows your score. It follows Marta through two weeks of training for a half marathon, in 21 screens, 5 chapters and an appendix. The panel beside the phone says what's happening and why each screen looks the way it does. Back and Next walk the story in order, and tapping inside the app works too.
 
 ![Welcome](screenshots/welcome.png)
 ![Today](screenshots/today.png)

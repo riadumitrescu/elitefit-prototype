@@ -3,12 +3,16 @@
 const $ = s => document.querySelector(s);
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+// [name, story line]; the flashback and the what if sit inside chapters 2 and 4
 const chapters = [
-  ['Setting up', 'Sun 11 Oct, evening'],
-  ['A short night', 'Wed 21 Oct, 06:40'],
-  ['Her call', 'Wed 21 Oct'],
-  ['The next morning', 'Thu 22 Oct, 06:50'],
-  ['Looking back', 'Sun 25 Oct'],
+  ['Setting up', 'Chapter 1 · Sun 11 Oct, evening'],
+  ['A flashback', 'Chapter 2 · Mon 12 Oct, her first morning'],
+  ['A short night', 'Chapter 2 · Wed 21 Oct, 06:40'],
+  ['Her call', 'Chapter 3 · Wed 21 Oct'],
+  ['The next morning', 'Chapter 4 · Thu 22 Oct, 06:50'],
+  ['Feel awful, score high', 'Chapter 4 · What if'],
+  ['Looking back', 'Chapter 5 · Sun 25 Oct'],
+  ["Today in Revolut's style", 'Appendix'],
 ];
 // [screen, chapter, caption]
 const steps = [
@@ -17,22 +21,25 @@ const steps = [
   ['connect', 0, "Her Apple Watch is already linked and she can add a ring. The devices are drawn as things she owns, so it's clear where the numbers come from."],
   ['permissions', 0, "Before she allows anything, she sees what the app reads and what it never does. The second list is as big as the first on purpose."],
   ['how', 0, "Three cards, one step each, so she knows what tomorrow morning looks like. The last one is the promise: when she and the ring disagree, she decides."],
-  ['membership', 0, "The price and the trial are in the headline, not the small print. Maybe later is a real way out, so she isn't pushed to pay before she's tried it."],
-  ['checkin', 1, "Ten days in, after a short night, Marta opens the app. Her score stays locked until she taps how she feels, so the number doesn't set her mood for her."],
-  ['today', 1, "She said Great, her body says 46 Low. Both sit side by side, and the tempo run stays on because she feels fine. A lower answer would swap it for mobility."],
-  ['sleep', 1, "Tapping the score opens last night: 5h 40m, 1h 50m under her goal. The dark screen is only for sleep, so it reads as night at a glance."],
-  ['insight', 1, "The app explains the low score with her own 10 nights. It says how sure it is, and she can tell it whether that helped."],
-  ['plan', 2, "Her plan still has the tempo run today, 2 × 15 min at 5:10/km. The week strip shows what's done and what's next, 6 weeks out."],
-  ['session', 2, "She's 12:40 into the first block, a little slower than target. The screen offers to ease off but leaves the call to her."],
-  ['done', 2, "Tempo done, 9.6 km. Asking how it felt right away gives tomorrow's check-in something to compare with."],
-  ['today-next', 3, "Thursday, 06:50. She said Good and her score is back to 71 High, so the app tells her she called it. Today is strength."],
-  ['sync-failed', 3, "Some mornings the ring doesn't sync. The screen stays calm and lets her go by how she feels, so a missing number doesn't stop her day."],
-  ['trends', 4, "Sunday, looking back over two weeks. Her HRV dipped to 38 on 21 Oct and is back above her usual at 62."],
-  ['agree', 4, "She and her ring agreed 11 of 12 mornings. The one they didn't is the morning she trusted herself, and it went fine."],
-  ['you', 4, "Her profile keeps the plain facts: her race, her devices, her membership. That's the end of Marta's first two weeks."],
+  ['membership', 0, "The price and the trial are in the headline, not the small print. Maybe later is a real way out, so she isn't pushed to pay before she's tried it. The price is my proposal: Garmin charges £6.99 for its extra tier. Ultra already bundles partner subscriptions, so EliteFit could be one of them."],
+  ['first-morning', 1, "Back to her first morning, the day after she signed up. There's no score yet, because the app needs a week of nights to learn her usual. So the first week is all about how she feels, and her plan starts gently with mobility and yoga."],
+  ['checkin', 2, "Ten days in, after a short night, Marta opens the app. Her score stays locked until she taps how she feels, so the number doesn't set her mood for her."],
+  ['today', 2, "She said Great, her body says 46 Low. Both sit side by side, and the tempo run stays on because she feels fine. A lower answer would swap it for mobility."],
+  ['sleep', 2, "Tapping the score opens last night: 5h 40m, 1h 50m under her goal. The dark screen is only for sleep, so it reads as night at a glance."],
+  ['insight', 2, "The app explains the low score with her own 10 nights. It says how sure it is, and she can tell it whether that helped."],
+  ['plan', 3, "Her plan still has the tempo run today, 2 × 15 min at 5:10/km. The week strip shows what's done and what's next, 6 weeks out."],
+  ['session', 3, "She's 12:40 into the first block, a little slower than target. The screen offers to ease off but leaves the call to her."],
+  ['done', 3, "Tempo done, 9.6 km. Asking how it felt right away gives tomorrow's check-in something to compare with."],
+  ['today-next', 4, "Thursday, 06:50. She said Good and her score is back to 71 High, so the app tells her she called it. Today is strength."],
+  ['disagree-low', 5, "This is a \"what if\" state, not one of Marta's real mornings. Say she feels awful but her ring says 87 Peak. The app goes with her, swaps the run for a walk and notes it in case she's getting ill. It doesn't guess what's wrong, it only says when to see a doctor."],
+  ['sync-failed', 4, "Some mornings the ring doesn't sync. The screen stays calm and lets her go by how she feels, so a missing number doesn't stop her day."],
+  ['trends', 6, "Sunday, looking back over two weeks. Her HRV dipped to 38 on 21 Oct and is back above her usual at 62."],
+  ['agree', 6, "She and her ring agreed 11 of 12 mornings. The one they didn't is the morning she trusted herself, and it went fine. Based on how I grouped the scores: High and Peak count as a Good morning."],
+  ['you', 6, "Her profile keeps the plain facts: her race, her devices, her membership. That's the end of Marta's first two weeks."],
+  ['today-dark', 7, "Revolut's own app is dark and plain. I designed EliteFit warmer on purpose, so mornings feel softer. Here's Today in their style, to compare. I'd test both."],
 ];
 const noTabs = ['welcome', 'goal', 'connect', 'permissions', 'how', 'membership', 'session', 'done'];
-const tabOf = { checkin: 'today', today: 'today', sleep: 'today', insight: 'today', 'today-next': 'today', 'sync-failed': 'today', plan: 'plan', trends: 'trends', agree: 'trends', you: 'you' };
+const tabOf = { 'first-morning': 'today', 'disagree-low': 'today', 'today-dark': 'today', checkin: 'today', today: 'today', sleep: 'today', insight: 'today', 'today-next': 'today', 'sync-failed': 'today', plan: 'plan', trends: 'trends', agree: 'trends', you: 'you' };
 const clock = { checkin: '6:40', 'today-next': '6:50', 'sync-failed': '6:50' };
 const feels = ['', 'Awful', 'Tired', 'Okay', 'Good', 'Great'];
 const feelColor = ['', '#E8594F', '#F08A4B', '#F2A93B', '#8CCB5E', '#1FA971'];
@@ -46,7 +53,8 @@ function show(v) {
   $(`.screen[data-view="${v}"] .scroll`).scrollTop = 0;
   $('#tabs').classList.toggle('hide', noTabs.includes(v));
   document.querySelectorAll('.tab').forEach(t => t.dataset.tab === tabOf[v] ? t.setAttribute('aria-current', 'page') : t.removeAttribute('aria-current'));
-  const dark = v === 'sleep' || v === 'insight';
+  const dark = ['sleep', 'insight', 'today-dark'].includes(v);
+  $('#tabs').classList.toggle('dark', v === 'today-dark');
   $('#status').classList.toggle('light', dark);
   $('#homebar').classList.toggle('light', dark);
   $('#clock').textContent = clock[v] || '9:41';
@@ -54,7 +62,7 @@ function show(v) {
   if (v === 'you') renderDevices();
 
   const [name, when] = chapters[steps[i][1]];
-  $('#when').textContent = `Chapter ${steps[i][1] + 1} · ${when}`;
+  $('#when').textContent = when;
   $('#chapter').textContent = name;
   $('#cap').textContent = steps[i][2];
   $('#count').textContent = `${i + 1} of ${steps.length}`;
@@ -163,6 +171,11 @@ function setFeel(n) {
   $('#sessSub').textContent = keep ? `You feel ${name}, so it stays on` : `You feel ${name}, so we swapped it`;
   $('#planTitle').textContent = keep ? 'Tempo run' : 'Mobility';
   $('#planSub').textContent = keep ? '2 × 15 min at 5:10/km' : '20 min, easy, swapped from the tempo run';
+  // only the tempo run opens the run screen; mobility just starts
+  document.querySelectorAll('[data-run]').forEach(b => {
+    if (keep) { b.dataset.go = 'session'; delete b.dataset.toast; }
+    else { delete b.dataset.go; b.dataset.toast = 'Mobility started'; }
+  });
 }
 
 function renderDevices() {

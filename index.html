@@ -162,7 +162,7 @@
   <section class="screen bg-dawn" data-view="membership" aria-label="Membership">
     <div class="scroll notabs">
       <div class="c" style="padding-top:8px"><span class="wordmark">elitefit<i></i></span></div>
-      <h1 class="serif h1 c" style="margin-top:40px">[price] a month<br>after a 14-day trial.</h1>
+      <h1 class="serif h1 c" style="margin-top:40px">£5.99 a month, or included in Revolut Ultra,<br>after a 14&#8209;day trial.</h1>
       <p class="sub c">Pause any time.</p>
       <div class="aub perks">
         <p class="kicker">With membership</p>
@@ -173,8 +173,36 @@
         </ul>
       </div>
       <div class="foot">
-        <button class="btn-start" style="width:100%;height:56px;font-size:17px" data-go="checkin">Start trial</button>
-        <button class="link" data-go="checkin">Maybe later</button>
+        <button class="btn-start" style="width:100%;height:56px;font-size:17px" data-go="first-morning">Start trial</button>
+        <button class="link" data-go="first-morning">Maybe later</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FIRST MORNING: no score until there's a baseline -->
+  <section class="screen bg-dawn" data-view="first-morning" aria-label="Today, your first morning">
+    <div class="scroll">
+      <header class="top">
+        <div><span class="wordmark">elitefit<i></i></span><p class="date">Monday, 12 October</p></div>
+        <div class="acts"><button class="circ" aria-label="Notifications"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15z"/><path d="M10 20.5a2.2 2.2 0 0 0 4 0"/></svg></button><button class="circ" data-go="you" aria-label="Your profile">MS</button></div>
+      </header>
+      <div class="ringbtn" role="img" aria-label="No score yet. Learning your normal">
+        <svg viewBox="0 0 226 226" aria-hidden="true">
+          <circle cx="113" cy="113" r="88" fill="url(#disc)" opacity=".6"/>
+          <circle cx="113" cy="113" r="102" fill="none" stroke="rgba(255,255,255,.45)" stroke-width="15"/>
+        </svg>
+        <span class="in"><span class="lbl">Learning your normal</span></span>
+      </div>
+      <h1 class="serif h1 c" style="margin-top:34px">Day one. Just tell me how you feel.</h1>
+      <p class="sub c">Day 1 of 7. Your score starts once I know your usual.</p>
+      <div class="glass opin">
+        <div class="half"><span class="minorb" style="background:linear-gradient(145deg,#BCE297,#78BD55)"></span><span><small>You</small><strong>Good</strong></span></div>
+        <div class="half"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="13" fill="none" stroke="rgba(30,21,48,.12)" stroke-width="4"/></svg><span><small>Your body</small><strong>Learning</strong></span></div>
+      </div>
+      <div class="aub session">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#FFB59A" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="13.5" r="7"/><path d="M12 13.5V10M10 3h4M18 6.5l1.5-1.5"/></svg></span>
+        <span class="t"><strong>Mobility and yoga · 30 min</strong><span>Today, from your plan</span></span>
+        <button class="btn-start" data-toast="Mobility and yoga started">Start</button>
       </div>
     </div>
   </section>
@@ -233,7 +261,7 @@
       <div class="aub session">
         <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#FFB59A" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="13.5" r="7"/><path d="M12 13.5V10M10 3h4M18 6.5l1.5-1.5"/></svg></span>
         <span class="t"><strong id="sessTitle">Tempo run · 2 × 15 min</strong><span id="sessSub">You feel Great, so it stays on</span></span>
-        <button class="btn-start" data-go="session">Start</button>
+        <button class="btn-start" data-run data-go="session">Start</button>
       </div>
     </div>
   </section>
@@ -311,7 +339,7 @@
         <p class="kicker">Today · Wed 21 Oct</p>
         <h3 id="planTitle">Tempo run</h3>
         <p id="planSub">2 × 15 min at 5:10/km</p>
-        <button class="btn-start" data-go="session">Start</button>
+        <button class="btn-start" data-run data-go="session">Start</button>
       </div>
     </div>
   </section>
@@ -391,6 +419,36 @@
         <span class="t"><strong>Strength · lower body</strong><span>You feel Good, so it stays on</span></span>
         <button class="btn-start" data-toast="Strength started">Start</button>
       </div>
+    </div>
+  </section>
+
+  <!-- WHAT IF: she feels awful, the ring says Peak -->
+  <section class="screen bg-dawn" data-view="disagree-low" aria-label="Today, you feel awful">
+    <div class="scroll">
+      <header class="top">
+        <div><span class="wordmark">elitefit<i></i></span><p class="date">Any morning</p></div>
+        <div class="acts"><button class="circ" aria-label="Notifications"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15z"/><path d="M10 20.5a2.2 2.2 0 0 0 4 0"/></svg></button><button class="circ" data-go="you" aria-label="Your profile">MS</button></div>
+      </header>
+      <div class="ringbtn" role="img" aria-label="Readiness 87, Peak">
+        <svg viewBox="0 0 226 226" aria-hidden="true">
+          <circle cx="113" cy="113" r="88" fill="url(#disc)"/>
+          <circle cx="113" cy="113" r="102" fill="none" stroke="rgba(255,255,255,.45)" stroke-width="15"/>
+          <circle cx="113" cy="113" r="102" fill="none" stroke="#fff" stroke-width="15" stroke-linecap="round" stroke-dasharray="640.9" stroke-dashoffset="83.3" transform="rotate(-90 113 113)" filter="url(#rglow)"/>
+        </svg>
+        <span class="in"><span class="lbl">Readiness</span><b class="num">87</b><span class="pill high">Peak</span></span>
+      </div>
+      <h1 class="serif h1 c" style="margin-top:34px">Your body says go. You say no.</h1>
+      <p class="sub c">Let's go easy. We'll note it in case you're getting ill.</p>
+      <div class="glass opin">
+        <div class="half"><span class="minorb" style="background:linear-gradient(145deg,#F59088,#E2463E)"></span><span><small>You</small><strong>Awful</strong></span></div>
+        <div class="half"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="13" fill="none" stroke="rgba(30,21,48,.12)" stroke-width="4"/><circle cx="17" cy="17" r="13" fill="none" stroke="#1FA971" stroke-width="4" stroke-linecap="round" stroke-dasharray="81.7" stroke-dashoffset="10.6" transform="rotate(-90 17 17)"/></svg><span><small>Your body</small><strong>87 Peak</strong></span></div>
+      </div>
+      <div class="aub session">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#FFB59A" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="13.5" r="7"/><path d="M12 13.5V10M10 3h4M18 6.5l1.5-1.5"/></svg></span>
+        <span class="t"><strong>Easy walk · 20 min</strong><span>You feel Awful, so we swapped it</span></span>
+        <button class="btn-start" data-toast="Easy walk started">Start</button>
+      </div>
+      <div class="glass note"><p>Feeling awful three days in a row? Talk to a doctor.</p></div>
     </div>
   </section>
 
@@ -480,9 +538,32 @@
       <div class="glass list" id="youDevs"></div>
       <p class="sect">Membership</p>
       <div class="glass list">
-        <div class="li"><span class="t">[price] a month · pause any time</span></div>
+        <div class="li"><span class="t">£5.99 a month, or included in Revolut Ultra · pause any time</span></div>
       </div>
       <button class="link" data-go="connect">Add a device</button>
+    </div>
+  </section>
+
+  <!-- APPENDIX: Today in Revolut's style, dark and plain -->
+  <section class="screen rev" data-view="today-dark" aria-label="Today, in Revolut's style">
+    <div class="scroll">
+      <header class="top">
+        <div><p class="rev-h">Today</p><p class="date">Wednesday, 21 October</p></div>
+        <div class="acts"><button class="circ" data-go="you" aria-label="Your profile">MS</button></div>
+      </header>
+      <div class="rev-card rev-score">
+        <svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="52" fill="none" stroke="#2C2C2E" stroke-width="10"/><circle cx="60" cy="60" r="52" fill="none" stroke="#4D7CFE" stroke-width="10" stroke-linecap="round" stroke-dasharray="326.7" stroke-dashoffset="176.4" transform="rotate(-90 60 60)"/></svg>
+        <div><p>Readiness</p><b class="num">46</b><p>Low</p></div>
+      </div>
+      <div class="rev-card">
+        <h1 class="rev-t">Go easy today.</h1>
+        <p>A walk or mobility is enough.</p>
+      </div>
+      <div class="rev-card rev-list">
+        <div class="rev-row"><span class="rev-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="8.5" r="4"/><path d="M4.5 20.5a7.5 7.5 0 0 1 15 0"/></svg></span><span class="t">You</span><em>Great</em></div>
+        <div class="rev-row"><span class="rev-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 20s-7.5-4.4-7.5-10A4.3 4.3 0 0 1 12 7.3 4.3 4.3 0 0 1 19.5 10c0 5.6-7.5 10-7.5 10z"/></svg></span><span class="t">Your body</span><em>46 Low</em></div>
+        <div class="rev-row"><span class="rev-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="13.5" r="7"/><path d="M12 13.5V10M10 3h4M18 6.5l1.5-1.5"/></svg></span><span class="t">Tempo run · 2 × 15 min<small>You feel Great, so it stays on</small></span><button class="rev-btn" data-go="session">Start</button></div>
+      </div>
     </div>
   </section>
 
